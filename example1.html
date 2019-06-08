@@ -1,5 +1,6 @@
 <html>
 <head>
+  <link rel="stylesheet" href="example1.css">
   <style>
     #specialButton{
     position:absolute;
@@ -18,45 +19,7 @@
 }
     </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script>
-$(document).ready(function(){
-
-  $("#specialButton").on({
-          mouseover:function(){
-              $(this).css({
-                  left:(Math.random()*200)+"px",
-                  top:(Math.random()*200)+"px",
-              });
-          }
-      });
-
-      $(document).keydown(function(e) {
-    switch(e.which) {
-
-        case 38: // up
-        setBackground('red');
-        break;
-
-        case 40: // down
-        setBackground('blue')
-        break;
-
-        case 39: // right
-        setBackground('yellow')
-        break;
-
-        case 37: // left
-        setBackground('green')
-        break;
-
-        default: return; // exit this handler for other keys
-    }
-    e.preventDefault(); // prevent the default action (scroll / move caret)
-});
-
-
-});
-</script>
+<script src="example1.js"></script>
 </head>
 <body>
   <p></p>
@@ -80,8 +43,8 @@ $(document).ready(function(){
 <p>Enter name:</p>
 <input id="myText" value="Evan"/>
 <button onclick="submitName()">Submit name</button>
-<p>Enter color:</p>
-<input id="myColor" value="Red"/>
+<p>Enter color: (click for color picker)</p>
+<input id="myColor" type="color"/>
 <button onclick="submitColor()">Submit color</button>
 <p>Press up, down, left or right for a surprise</p>
 </body>
